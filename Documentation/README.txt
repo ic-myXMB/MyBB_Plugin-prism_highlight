@@ -1,5 +1,4 @@
-# MyBB_Plugin-prism_highlight
- /*
+/*
  * MyBB: Prism Highlight Code
  * 
  * Authors: ic_myXMB
