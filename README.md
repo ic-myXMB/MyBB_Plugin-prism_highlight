@@ -34,7 +34,7 @@ CHANGELOG:
    - Contains ability to enable or disable the plugin
    - Contains localization support
    - Contains ability to detect the code language by using Highlight JS to do so and then Style and Highlight via Prism JS
-   - Wraps all <code> tags in <pre> tags via JS
+   - Wraps all code tags in pre tags via JS
    - Contains ability to Select / Copy code on each codeblock
    - Contains Latest / Current HighlightJS / PrismJS version
    - Initial release 
