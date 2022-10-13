@@ -13,18 +13,24 @@
 
 // HighlightJS
 
-// Init HighlightJS
+// Add Event Listener
 document.addEventListener('DOMContentLoaded', (event) => {
+	// Query Selector
     document.querySelectorAll('code').forEach((el) => {
+    	 // Init HighlightJS el
          hljs.highlightElement(el);
     });
 });		
 // Highlight brPlugin
 const brPlugin = {
+	// Before
     "before:highlightBlock": ({ block }) => {
+    	 // Block inner Html
          block.innerHTML = block.innerHTML.replace(/\n/g, '').replace(/<br[ /]*>/g, '\n');
     },
+    // After
     "after:highlightBlock": ({ result }) => {
+    	 // Result value
          result.value = result.value.replace(/\n/g, '<br>');
     }
 };
@@ -33,11 +39,11 @@ hljs.addPlugin(brPlugin);
 
 // PrismJS
 
-// load event happens after all resources are loaded for the page.
+// Load event happens after all resources are loaded for the page.
 window.addEventListener('load', function () {
- // do logic	 
+ // Ready do logic	 
  $(document).ready( function() { 
- 	 // wrap code tags in pre tags
+ 	 // Wrap code tags in pre tags
      $('code').wrap('<pre class="line-numbers"></pre>');
   });
   // Init Prism Highlight
