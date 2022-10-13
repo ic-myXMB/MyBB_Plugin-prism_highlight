@@ -8,7 +8,7 @@
  *
  * MyBB Version: 1.8
  *
- * Plugin Version: 1.0.0
+ * Plugin Version: 1.0.1
  * 
  */
 
@@ -18,11 +18,10 @@ if(!defined("IN_MYBB")) {
   die("Direct initialization of this file is not allowed.<br /><br />Please make sure IN_MYBB is defined.");
 }
 
-// Add Hooks
+// Add Plugin Hooks
 
 // Load in Showthread
 $plugins->add_hook("showthread_start", "prism_highlight");
-
 // Load in Portal 
 $plugins->add_hook("portal_start", "prism_highlight");
 
@@ -35,7 +34,7 @@ function prism_highlight_info() {
     // Language Load
     $lang->load("prism_highlight");
     
-    // Array Return  
+    // Return  
     return array(
         'name' => $lang->prism_highlight_name,
         'description' => $lang->prism_highlight_description,
@@ -46,18 +45,19 @@ function prism_highlight_info() {
         'codename' => $lang->prism_highlight_code_name,
         'compatibility' => $lang->prism_highlight_compatability
     );
+
 }
 
 // Plugin Activate
 function prism_highlight_activate() {
 
-  // Add Settings
+    // Add Plugin Settings
 
-  // Globals
-  global $db, $mybb, $lang; 
+    // Globals
+    global $db, $mybb, $lang; 
 
-   // Language Load
-  $lang->load("prism_highlight");
+    // Language Load
+    $lang->load("prism_highlight");
 
     // Settings Group
     $settinggroups = array(
@@ -68,8 +68,10 @@ function prism_highlight_activate() {
         'isdefault'     => '0'
     );
 
+    // gid
     $gid = $db->insert_query('settinggroups', $settinggroups);
 
+    // disporder
     $disporder = '0';
     
     // Setting 1
@@ -84,6 +86,7 @@ function prism_highlight_activate() {
         'gid'           => $gid
     );
 
+    // Query Insert
     $db->insert_query('settings', $setting);
 
     // Setting 2
@@ -98,6 +101,7 @@ function prism_highlight_activate() {
         'gid'           => $gid
     );
 
+    // Query Insert
     $db->insert_query('settings', $setting);
     
     // Rebuild Settings
@@ -106,11 +110,11 @@ function prism_highlight_activate() {
     // Edit Templates
     require_once MYBB_ROOT."/inc/adminfunctions_templates.php";
 
-    // Add
+    // Add Template Edits
 
-    // Showthread
+    // Showthread Template
     find_replace_templatesets('showthread', '#'.preg_quote('</head>').'#i', '{$prism_highlight}</head>');
-    // Portal
+    // Portal Template
     find_replace_templatesets('portal', '#'.preg_quote('</head>').'#i', '{$prism_highlight}</head>');
 
 }
@@ -118,7 +122,7 @@ function prism_highlight_activate() {
 // Plugin Deactivate
 function prism_highlight_deactivate() {
 
-  // Remove Settings
+  // Remove Plugin Settings
 
   // Globals  
   global $db;
@@ -130,18 +134,19 @@ function prism_highlight_deactivate() {
   // Edit Templates
   require_once MYBB_ROOT."/inc/adminfunctions_templates.php";
 
-  // Remove
+  // Remove Template Edits
 
-  // Showthread
+  // Showthread Template
   find_replace_templatesets('showthread', '#'.preg_quote('{$prism_highlight}</head>').'#i', '</head>');
-  // Portal
+  // Portal Template
   find_replace_templatesets('portal', '#'.preg_quote('{$prism_highlight}</head>').'#i', '</head>');
+
 }
 
 // prism_highlight Func
 function prism_highlight() {
 
-  // Styles
+  // Styles (in themes dir)
   
   // Globals
   global $mybb, $prism_highlight;
@@ -149,6 +154,7 @@ function prism_highlight() {
   // Style 0: Default
   if ($mybb->settings['prism_highlight_setting_2'] == "0") {
 
+  	 // Style
      $codeblock_style = "<!-- Prism Default CSS -->
 <link href=\"inc/plugins/prism_highlight/themes/default.css\" rel=\"stylesheet\" />
 <style>
@@ -165,6 +171,7 @@ function prism_highlight() {
   // Style 1: Dark
   if ($mybb->settings['prism_highlight_setting_2'] == "1") {
 
+  	 // Style
      $codeblock_style = "<!-- Prism Dark CSS -->
 <link href=\"inc/plugins/prism_highlight/themes/dark.css\" rel=\"stylesheet\" />
 <style>
@@ -186,6 +193,7 @@ function prism_highlight() {
   // Style 2: Funky
   if ($mybb->settings['prism_highlight_setting_2'] == "2") {
 
+  	 // Style
      $codeblock_style = "<!-- Prism Funky CSS -->
 <link href=\"inc/plugins/prism_highlight/themes/funky.css\" rel=\"stylesheet\" />
 <style>
@@ -210,7 +218,8 @@ function prism_highlight() {
   // Style 3: Okaidia
   if ($mybb->settings['prism_highlight_setting_2'] == "3") {
 
-      $codeblock_style = "<!-- Prism Okaidia CSS -->
+  	 // Style
+     $codeblock_style = "<!-- Prism Okaidia CSS -->
 <link href=\"inc/plugins/prism_highlight/themes/okaidia.css\" rel=\"stylesheet\" />
 <style>
   .codeblock {
@@ -227,7 +236,8 @@ function prism_highlight() {
   // Style 4: Twilight
   if ($mybb->settings['prism_highlight_setting_2'] == "4") {
 
-      $codeblock_style = "<!-- Prism Twilight CSS -->
+  	 // Style
+     $codeblock_style = "<!-- Prism Twilight CSS -->
 <link href=\"inc/plugins/prism_highlight/themes/twilight.css\" rel=\"stylesheet\" />
 <style>
   .codeblock {
@@ -247,6 +257,7 @@ function prism_highlight() {
   // Style 5: Coy
   if ($mybb->settings['prism_highlight_setting_2'] == "5") {
 
+  	// Style
      $codeblock_style = "<!-- Prism Coy CSS -->
 <link href=\"inc/plugins/prism_highlight/themes/coy.css\" rel=\"stylesheet\" />
 <style>
@@ -263,6 +274,7 @@ function prism_highlight() {
   // Style 6: Solarized Light
   if ($mybb->settings['prism_highlight_setting_2'] == "6") {
 
+  	 // Style
      $codeblock_style = "<!-- Prism Solarized Light CSS -->
 <link href=\"inc/plugins/prism_highlight/themes/solarized-light.css\" rel=\"stylesheet\" />
 <style>
@@ -279,6 +291,7 @@ function prism_highlight() {
   // Style 7: Tomorrow Night
   if ($mybb->settings['prism_highlight_setting_2'] == "7") {
 
+  	 // Style
      $codeblock_style = "<!-- Prism Tomorrow Night CSS -->
 <link href=\"inc/plugins/prism_highlight/themes/tomorrow-night.css\" rel=\"stylesheet\" />
 <style>
@@ -301,8 +314,8 @@ function prism_highlight() {
   // Globals
   global $headerinclude;
 
-  // Headerinclude
-  $headerinclude .= "
+     // Headerinclude
+     $headerinclude .= "
 <!-- Highlight JS --> 
 <script src=\"inc/plugins/prism_highlight/jscripts/highlight.min.js\"></script>
 <!-- Prism JS --> 
@@ -315,16 +328,16 @@ function prism_highlight() {
    }   
 </style>";
 
-
   	 // Add Codeblock Style Inline
      $prism_highlight = "".$codeblock_style."";
+
   }
 
   // If Plugin Not Active 
   if ($mybb->settings['prism_highlight_setting_1'] == "0") { 
   	 // Empty Codeblock Style Inline
      $prism_highlight = "";
-  }
+  }  
 
 }
 

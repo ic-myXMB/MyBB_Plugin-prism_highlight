@@ -5,7 +5,7 @@
  *
  * MyBB Version: 1.8
  *
- * Current Plugin Version: 1.0.0
+ * Current Plugin Version: 1.0.1
  *
  * Langs: English, EnglishGB, Espanol, French, Italiano, German
  *
@@ -25,7 +25,7 @@ INSTALL INSTRUCTIONS:
 
 CHANGELOG:
 
-- Version 1.0.0
+- Version 1.0.1
 
    - Localization support (currently: English, EnglishGB, Espanol, French, Italiano, German)
    - Added 8 styles from the Prism JS site
@@ -37,3 +37,6 @@ CHANGELOG:
    - Contains ability to Select / Copy code on each codeblock
    - Contains Latest / Current HighlightJS / PrismJS version
    - Initial release 
+
+- Version 1.0.0
+   - Initial release
