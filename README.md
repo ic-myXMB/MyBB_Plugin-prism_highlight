@@ -37,7 +37,6 @@ CHANGELOG:
    - Wraps all code tags in pre tags via JS
    - Contains ability to Select / Copy code on each codeblock
    - Contains Latest / Current HighlightJS / PrismJS version
-   - Initial release 
 
 - Version 1.0.0
    - Initial release

@@ -35,8 +35,7 @@ CHANGELOG:
    - Contains ability to detect the code language by using Highlight JS to do so and then Style and Highlight via Prism JS
    - Wraps all <code> tags in <pre> tags via JS
    - Contains ability to Select / Copy code on each codeblock
-   - Contains Latest / Current HighlightJS / PrismJS version
-   - Initial release 
+   - Contains Latest / Current HighlightJS / PrismJS version 
 
 - Version 1.0.0
    - Initial release
