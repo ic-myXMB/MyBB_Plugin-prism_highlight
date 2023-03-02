@@ -3,7 +3,7 @@
  * 
  * Authors: ic_myXMB
  *
- * MyBB Version: 1.8
+ * MyBB Version: 1.8.x (was created at time using 1.8.31)
  *
  * Current Plugin Version: 1.0.1
  *
