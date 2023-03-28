@@ -68,14 +68,17 @@ function prism_highlight_activate() {
         'isdefault'     => '0'
     );
 
-    // gid
-    $gid = $db->insert_query('settinggroups', $settinggroups);
+    // Group
+    $group['gid'] = $db->insert_query('settinggroups', $settinggroups);
 
-    // disporder
+    // Gid
+    $gid = $db->insert_id();
+
+    // Disporder
     $disporder = '0';
     
     // Setting 1
-    $setting = array(
+    $setting_1 = array(
         'sid'           => '0',
         'name'          => 'prism_highlight_setting_1',
         'title'         => $db->escape_string($lang->prism_highlight_setting_1_title),
@@ -83,14 +86,14 @@ function prism_highlight_activate() {
         'optionscode'   => 'yesno',
         'value'         => '1',
         'disporder'     => $disporder++,
-        'gid'           => $gid
+        'gid'           => intval($gid)
     );
 
     // Query Insert
-    $db->insert_query('settings', $setting);
+    $db->insert_query('settings', $setting_1);
 
     // Setting 2
-    $setting = array(
+    $setting_2 = array(
         'sid'           => '0',
         'name'          => 'prism_highlight_setting_2',
         'title'         => $db->escape_string($lang->prism_highlight_setting_2_title),
@@ -98,11 +101,11 @@ function prism_highlight_activate() {
         'optionscode'   => "select\n0=Default\n1=Dark\n2=Funky\n3=Okaidia\n4=Twilight\n5=Coy\n6=Solarized Light\n7=Tomorrow Night",
         'value'         => '0',
         'disporder'     => $disporder++,
-        'gid'           => $gid
+        'gid'           => intval($gid)
     );
 
     // Query Insert
-    $db->insert_query('settings', $setting);
+    $db->insert_query('settings', $setting_2);
     
     // Rebuild Settings
     rebuild_settings(); 
