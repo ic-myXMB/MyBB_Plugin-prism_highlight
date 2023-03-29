@@ -32,30 +32,32 @@ function prism_highlight_info() {
     // Globals
     global $db, $lang, $prism_highlight_settingsgroup_cache;
     
-    // Lang Load
+	// Lang Load
 	$lang->load("prism_highlight");
 
 	// Configuration link
 	if(empty($prism_highlight_settingsgroup_cache)) {
+		
 		// Query
 		$query = $db->simple_select('settinggroups', 'gid, name', 'isdefault = 0');
         
-        // While
+		// While
 		while($group = $db->fetch_array($query)) {
+
 			// Cache 
 			$prism_highlight_settingsgroup_cache[$group['name']] = $group['gid'];
 		}
 	}
 
-    // Gid
+	// Gid
 	$gid = isset($prism_highlight_settingsgroup_cache['prism_highlight']) ? $prism_highlight_settingsgroup_cache['prism_highlight'] : 0;
     
-    // Config Link
+	// Config Link
 	$prism_highlight_config = '<br />';
     
-    // If Gid
+	// If Gid
 	if($gid) {
-		
+
 	    // Globals
 		global $mybb;
 		
@@ -63,7 +65,7 @@ function prism_highlight_info() {
 		$prism_highlight_config = '<a style="float: right;" href="index.php?module=config&amp;action=change&amp;gid='.$gid.'">'.$lang->prism_highlight_config.'</a>';
 	}
 
-    // Return  
+    // Array Return  
     return array(
         'name' => $lang->prism_highlight_name,
         'description' => $lang->prism_highlight_description .$prism_highlight_config,
