@@ -8,7 +8,7 @@
  *
  * MyBB Version: 1.8
  *
- * Plugin Version: 1.0.1
+ * Plugin Version: 1.0.2
  * 
  */
 
@@ -22,6 +22,7 @@ if(!defined("IN_MYBB")) {
 
 // Load in Showthread
 $plugins->add_hook("showthread_start", "prism_highlight");
+
 // Load in Portal 
 $plugins->add_hook("portal_start", "prism_highlight");
 
@@ -34,10 +35,43 @@ function prism_highlight_info() {
     // Language Load
     $lang->load("prism_highlight");
     
+    // Globals
+    global $db, $lang, $prism_highlight_settingsgroup_cache;
+    
+    // Lang Load
+	$lang->load("prism_highlight");
+
+	// Configuration link
+	if(empty($prism_highlight_settingsgroup_cache)) {
+		// Query
+		$query = $db->simple_select('settinggroups', 'gid, name', 'isdefault = 0');
+        
+        // While
+		while($group = $db->fetch_array($query)) {
+			// Cache 
+			$prism_highlight_settingsgroup_cache[$group['name']] = $group['gid'];
+		}
+	}
+
+    // Gid
+	$gid = isset($prism_highlight_settingsgroup_cache['prism_highlight']) ? $prism_highlight_settingsgroup_cache['prism_highlight'] : 0;
+    
+    // Config Link
+	$prism_highlight_config = '<br />';
+    
+    // If Gid
+	if($gid) {
+	    // Globals
+		global $mybb;
+		
+        // Config Link
+		$prism_highlight_config = '<a style="float: right;" href="index.php?module=config&amp;action=change&amp;gid='.$gid.'">'.$lang->prism_highlight_config.'</a>';
+	}
+
     // Return  
     return array(
         'name' => $lang->prism_highlight_name,
-        'description' => $lang->prism_highlight_description,
+        'description' => $lang->prism_highlight_description .$prism_highlight_config,
         'website' => $lang->prism_highlight_website,
         'author' => $lang->prism_highlight_author,
         'authorsite' => $lang->prism_highlight_author_site,
@@ -117,6 +151,7 @@ function prism_highlight_activate() {
 
     // Showthread Template
     find_replace_templatesets('showthread', '#'.preg_quote('</head>').'#i', '{$prism_highlight}</head>');
+
     // Portal Template
     find_replace_templatesets('portal', '#'.preg_quote('</head>').'#i', '{$prism_highlight}</head>');
 
@@ -141,6 +176,7 @@ function prism_highlight_deactivate() {
 
   // Showthread Template
   find_replace_templatesets('showthread', '#'.preg_quote('{$prism_highlight}</head>').'#i', '</head>');
+  
   // Portal Template
   find_replace_templatesets('portal', '#'.preg_quote('{$prism_highlight}</head>').'#i', '</head>');
 

@@ -5,7 +5,7 @@
  *
  * MyBB Version: 1.8.x (was created at time using 1.8.31)
  *
- * Current Plugin Version: 1.0.1
+ * Current Plugin Version: 1.0.2
  *
  * Langs: English, EnglishGB, Espanol, French, Italiano, German
  *
@@ -24,6 +24,11 @@ INSTALL INSTRUCTIONS:
  4) Have Fun!
 
 CHANGELOG:
+
+- Version 1.0.2
+
+   - minor code edits (gid and group[gid] related)
+   - added plugin page settings link  
 
 - Version 1.0.1
 
