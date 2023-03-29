@@ -58,10 +58,10 @@ function prism_highlight_info() {
 	// If Gid
 	if($gid) {
 
-	    // Globals
+		// Globals
 		global $mybb;
 		
-        // Config Link
+		// Config Link
 		$prism_highlight_config = '<a style="float: right;" href="index.php?module=config&amp;action=change&amp;gid='.$gid.'">'.$lang->prism_highlight_config.'</a>';
 	}
 
