@@ -28,12 +28,6 @@ $plugins->add_hook("portal_start", "prism_highlight");
 
 // Plugin Information
 function prism_highlight_info() {
-
-    // Globals
-    global $lang;
-
-    // Language Load
-    $lang->load("prism_highlight");
     
     // Globals
     global $db, $lang, $prism_highlight_settingsgroup_cache;
@@ -61,6 +55,7 @@ function prism_highlight_info() {
     
     // If Gid
 	if($gid) {
+		
 	    // Globals
 		global $mybb;
 		
