@@ -63,7 +63,7 @@ function prism_highlight_info() {
 		global $mybb;
 		
 		// Settings Link
-		$prism_highlight_config = '<a style="float: right;" href="index.php?module=config&amp;action=change&amp;gid='.$gid.'">'.$lang->prism_highlight_config.'</a>';
+		$prism_highlight_config = '<a style="float: right;" href="index.php?module=config&amp;action=change&amp;gid='.$gid.'"><img src="../inc/plugins/prism_highlight/images/settings.png" width="16px" height="16px" style="padding: 2px; vertical-align:middle;">'.$lang->prism_highlight_config.'</a>';
 	}
 
     // Array Return  
