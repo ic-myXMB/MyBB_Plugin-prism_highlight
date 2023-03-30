@@ -373,7 +373,7 @@ function prism_highlight() {
   // If Plugin Not Active 
   if ($mybb->settings['prism_highlight_setting_1'] == "0") { 
 
-  	 // Empty Codeblock Style
+     // Empty Codeblock Style
      $prism_highlight = "";
   }  
 
