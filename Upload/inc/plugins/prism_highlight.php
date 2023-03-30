@@ -191,7 +191,7 @@ function prism_highlight() {
   // Style 0: Default
   if ($mybb->settings['prism_highlight_setting_2'] == "0") {
 
-  	 // Style
+     // Style
      $codeblock_style = "<!-- Prism Default CSS -->
 <link href=\"inc/plugins/prism_highlight/themes/default.css\" rel=\"stylesheet\" />
 <style>
@@ -208,7 +208,7 @@ function prism_highlight() {
   // Style 1: Dark
   if ($mybb->settings['prism_highlight_setting_2'] == "1") {
 
-  	 // Style
+     // Style
      $codeblock_style = "<!-- Prism Dark CSS -->
 <link href=\"inc/plugins/prism_highlight/themes/dark.css\" rel=\"stylesheet\" />
 <style>
@@ -230,7 +230,7 @@ function prism_highlight() {
   // Style 2: Funky
   if ($mybb->settings['prism_highlight_setting_2'] == "2") {
 
-  	 // Style
+     // Style
      $codeblock_style = "<!-- Prism Funky CSS -->
 <link href=\"inc/plugins/prism_highlight/themes/funky.css\" rel=\"stylesheet\" />
 <style>
@@ -255,7 +255,7 @@ function prism_highlight() {
   // Style 3: Okaidia
   if ($mybb->settings['prism_highlight_setting_2'] == "3") {
 
-  	 // Style
+     // Style
      $codeblock_style = "<!-- Prism Okaidia CSS -->
 <link href=\"inc/plugins/prism_highlight/themes/okaidia.css\" rel=\"stylesheet\" />
 <style>
@@ -273,7 +273,7 @@ function prism_highlight() {
   // Style 4: Twilight
   if ($mybb->settings['prism_highlight_setting_2'] == "4") {
 
-  	 // Style
+     // Style
      $codeblock_style = "<!-- Prism Twilight CSS -->
 <link href=\"inc/plugins/prism_highlight/themes/twilight.css\" rel=\"stylesheet\" />
 <style>
@@ -294,7 +294,7 @@ function prism_highlight() {
   // Style 5: Coy
   if ($mybb->settings['prism_highlight_setting_2'] == "5") {
 
-  	// Style
+     // Style
      $codeblock_style = "<!-- Prism Coy CSS -->
 <link href=\"inc/plugins/prism_highlight/themes/coy.css\" rel=\"stylesheet\" />
 <style>
@@ -311,7 +311,7 @@ function prism_highlight() {
   // Style 6: Solarized Light
   if ($mybb->settings['prism_highlight_setting_2'] == "6") {
 
-  	 // Style
+     // Style
      $codeblock_style = "<!-- Prism Solarized Light CSS -->
 <link href=\"inc/plugins/prism_highlight/themes/solarized-light.css\" rel=\"stylesheet\" />
 <style>
@@ -328,7 +328,7 @@ function prism_highlight() {
   // Style 7: Tomorrow Night
   if ($mybb->settings['prism_highlight_setting_2'] == "7") {
 
-  	 // Style
+     // Style
      $codeblock_style = "<!-- Prism Tomorrow Night CSS -->
 <link href=\"inc/plugins/prism_highlight/themes/tomorrow-night.css\" rel=\"stylesheet\" />
 <style>
