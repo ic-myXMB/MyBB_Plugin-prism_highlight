@@ -14,6 +14,7 @@
 
 // If Not Defined
 if(!defined("IN_MYBB")) {
+	
   // Then Die
   die("Direct initialization of this file is not allowed.<br /><br />Please make sure IN_MYBB is defined.");
 }
@@ -35,14 +36,14 @@ function prism_highlight_info() {
 	// Lang Load
 	$lang->load("prism_highlight");
 
-	// Configuration link
+	// Settings link
 	if(empty($prism_highlight_settingsgroup_cache)) {
 		
-		// Query
-		$query = $db->simple_select('settinggroups', 'gid, name', 'isdefault = 0');
+		// Gid Query
+		$gid_query = $db->simple_select('settinggroups', 'gid, name', 'isdefault = 0');
         
 		// While
-		while($group = $db->fetch_array($query)) {
+		while($group = $db->fetch_array($gid_query)) {
 
 			// Cache 
 			$prism_highlight_settingsgroup_cache[$group['name']] = $group['gid'];
@@ -52,7 +53,7 @@ function prism_highlight_info() {
 	// Gid
 	$gid = isset($prism_highlight_settingsgroup_cache['prism_highlight']) ? $prism_highlight_settingsgroup_cache['prism_highlight'] : 0;
     
-	// Config Link
+	// Settings Link
 	$prism_highlight_config = '<br />';
     
 	// If Gid
@@ -61,7 +62,7 @@ function prism_highlight_info() {
 		// Globals
 		global $mybb;
 		
-		// Config Link
+		// Settings Link
 		$prism_highlight_config = '<a style="float: right;" href="index.php?module=config&amp;action=change&amp;gid='.$gid.'">'.$lang->prism_highlight_config.'</a>';
 	}
 
@@ -364,14 +365,15 @@ function prism_highlight() {
    }   
 </style>";
 
-  	 // Add Codeblock Style Inline
+     // Add Codeblock Style CSS File Links
      $prism_highlight = "".$codeblock_style."";
 
   }
 
   // If Plugin Not Active 
   if ($mybb->settings['prism_highlight_setting_1'] == "0") { 
-  	 // Empty Codeblock Style Inline
+
+  	 // Empty Codeblock Style
      $prism_highlight = "";
   }  
 
