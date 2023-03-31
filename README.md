@@ -6,11 +6,11 @@
  *
  * MyBB Version: 1.8.x (was created at time using 1.8.31)
  *
- * Current Plugin Version: 1.0.2
+ * Current Plugin Version: 1.0.3
  *
  * Langs: English, EnglishGB, Espanol, French, Italiano, German
  *
- * Current HighlightJS version:  v11.6.0
+ * Current HighlightJS version:  v11.7.0
  * Current PrismJS version:  v1.29.0
  *
  */
@@ -25,6 +25,12 @@ INSTALL INSTRUCTIONS:
  4) Have Fun!
 
 CHANGELOG:
+
+- Version 1.0.3
+
+   - update current HighlightJS version from "v11.6.0" to:  v11.7.0
+   - minor cleanup / edits
+   - changed existing themes .css files to .min.css files
 
 - Version 1.0.2
 
@@ -44,5 +50,6 @@ CHANGELOG:
    - Contains Latest / Current HighlightJS / PrismJS version
 
 - Version 1.0.0
+
    - Initial release
 

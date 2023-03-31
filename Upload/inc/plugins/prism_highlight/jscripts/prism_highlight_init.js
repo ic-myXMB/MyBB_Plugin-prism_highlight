@@ -7,7 +7,7 @@
  *
  * MyBB Version: 1.8
  *
- * Plugin Version: 1.0.2
+ * Plugin Version: 1.0.3
  * 
  */
 
@@ -20,16 +20,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     	 // Init HighlightJS el
          hljs.highlightElement(el);
     });
-});		
+});	
+	
 // Highlight brPlugin
 const brPlugin = {
 	// Before
-    "before:highlightBlock": ({ block }) => {
+    "before:highlightElement": ({ el }) => {
     	 // Block inner Html
-         block.innerHTML = block.innerHTML.replace(/\n/g, '').replace(/<br[ /]*>/g, '\n');
+         el.innerHTML = el.innerHTML.replace(/\n/g, '').replace(/<br[ /]*>/g, '\n');
     },
     // After
-    "after:highlightBlock": ({ result }) => {
+    "after:highlightElement": ({ result }) => {
     	 // Result value
          result.value = result.value.replace(/\n/g, '<br>');
     }

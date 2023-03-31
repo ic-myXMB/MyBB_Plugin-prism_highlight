@@ -8,7 +8,7 @@
  *
  * MyBB Version: 1.8
  *
- * Plugin Version: 1.0.2
+ * Plugin Version: 1.0.3
  * 
  */
 
@@ -193,13 +193,13 @@ function prism_highlight() {
 
      // Style
      $codeblock_style = "<!-- Prism Default CSS -->
-<link href=\"inc/plugins/prism_highlight/themes/default.css\" rel=\"stylesheet\" />
+<link href=\"inc/plugins/prism_highlight/themes/default.min.css\" rel=\"stylesheet\" />
 <style>
   .codeblock {
 	 background: #F5F2F0;
    }
    pre[class*=\"language-\"].line-numbers {
-     padding-left: 2.8em;
+     padding-left: 3.8em;
    }   
 </style>";
 
@@ -210,14 +210,14 @@ function prism_highlight() {
 
      // Style
      $codeblock_style = "<!-- Prism Dark CSS -->
-<link href=\"inc/plugins/prism_highlight/themes/dark.css\" rel=\"stylesheet\" />
+<link href=\"inc/plugins/prism_highlight/themes/dark.min.css\" rel=\"stylesheet\" />
 <style>
   .codeblock {
 	 background: #4c3f33;
 	 color: #ffffff;
    }
    pre[class*=\"language-\"].line-numbers {
-     padding-left: 2.8em;
+     padding-left: 3.8em;
    } 
    pre[class*=\"language-\"] {
      border: unset;
@@ -232,7 +232,7 @@ function prism_highlight() {
 
      // Style
      $codeblock_style = "<!-- Prism Funky CSS -->
-<link href=\"inc/plugins/prism_highlight/themes/funky.css\" rel=\"stylesheet\" />
+<link href=\"inc/plugins/prism_highlight/themes/funky.min.css\" rel=\"stylesheet\" />
 <style>
    .codeblock {
      background: url('data:image/svg+xml;charset=utf-8,<svg%20version%3D\"1.1\"%20xmlns%3D\"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg\"%20width%3D\"100\"%20height%3D\"100\"%20fill%3D\"rgba(0%2C0%2C0%2C.2)\">%0D%0A<polygon%20points%3D\"0%2C50%2050%2C0%200%2C0\"%20%2F>%0D%0A<polygon%20points%3D\"0%2C100%2050%2C100%20100%2C50%20100%2C0\"%20%2F>%0D%0A<%2Fsvg>');
@@ -240,7 +240,7 @@ function prism_highlight() {
      background-size: 1em 1em;
    }
    pre[class*=\"language-\"].line-numbers {
-     padding-left: 2.8em;
+     padding-left: 3.8em;
    } 
    pre[class*=\"language-\"] {
      background: #000 url('data:image/svg+xml;charset=utf-8,<svg%20version%3D\"1.1\"%20xmlns%3D\"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg\"%20width%3D\"100\"%20height%3D\"100\"%20fill%3D\"rgba(0%2C0%2C0%2C.2)\">%0D%0A<polygon%20points%3D\"0%2C50%2050%2C0%200%2C0\"%20%2F>%0D%0A<polygon%20points%3D\"0%2C100%2050%2C100%20100%2C50%20100%2C0\"%20%2F>%0D%0A<%2Fsvg>') !important;
@@ -257,14 +257,14 @@ function prism_highlight() {
 
      // Style
      $codeblock_style = "<!-- Prism Okaidia CSS -->
-<link href=\"inc/plugins/prism_highlight/themes/okaidia.css\" rel=\"stylesheet\" />
+<link href=\"inc/plugins/prism_highlight/themes/okaidia.min.css\" rel=\"stylesheet\" />
 <style>
   .codeblock {
 	 background: #272822;
 	 color: #f8f8f2;
    }
    pre[class*=\"language-\"].line-numbers {
-     padding-left: 2.8em;
+     padding-left: 3.8em;
    }
 </style>";
 
@@ -275,14 +275,14 @@ function prism_highlight() {
 
      // Style
      $codeblock_style = "<!-- Prism Twilight CSS -->
-<link href=\"inc/plugins/prism_highlight/themes/twilight.css\" rel=\"stylesheet\" />
+<link href=\"inc/plugins/prism_highlight/themes/twilight.min.css\" rel=\"stylesheet\" />
 <style>
   .codeblock {
 	 background: #141414;
 	 color: #ffffff;
    }
    pre[class*=\"language-\"].line-numbers {
-     padding-left: 2.8em;
+     padding-left: 3.8em;
    } 
    pre[class*=\"language-\"] {
      border: unset;
@@ -296,13 +296,13 @@ function prism_highlight() {
 
      // Style
      $codeblock_style = "<!-- Prism Coy CSS -->
-<link href=\"inc/plugins/prism_highlight/themes/coy.css\" rel=\"stylesheet\" />
+<link href=\"inc/plugins/prism_highlight/themes/coy.min.css\" rel=\"stylesheet\" />
 <style>
   .codeblock {
 	 background: #ffffff;
    }
    pre[class*=\"language-\"].line-numbers {
-     padding-left: 2.8em;
+     padding-left: 3.8em;
    }
 </style>";
 
@@ -313,13 +313,13 @@ function prism_highlight() {
 
      // Style
      $codeblock_style = "<!-- Prism Solarized Light CSS -->
-<link href=\"inc/plugins/prism_highlight/themes/solarized-light.css\" rel=\"stylesheet\" />
+<link href=\"inc/plugins/prism_highlight/themes/solarized-light.min.css\" rel=\"stylesheet\" />
 <style>
   .codeblock {
 	 background: #fdf6e3;
    }
    pre[class*=\"language-\"].line-numbers {
-     padding-left: 2.8em;
+     padding-left: 3.8em;
    }     
 </style>";
 
@@ -330,14 +330,14 @@ function prism_highlight() {
 
      // Style
      $codeblock_style = "<!-- Prism Tomorrow Night CSS -->
-<link href=\"inc/plugins/prism_highlight/themes/tomorrow-night.css\" rel=\"stylesheet\" />
+<link href=\"inc/plugins/prism_highlight/themes/tomorrow-night.min.css\" rel=\"stylesheet\" />
 <style>
   .codeblock {
 	 background: #2d2d2d;
 	 color: #ccc;
    }
    pre[class*=\"language-\"].line-numbers {
-     padding-left: 2.8em;
+     padding-left: 3.8em;
    }   
 </style>";
 
@@ -348,8 +348,8 @@ function prism_highlight() {
   // If Plugin Active
   if ($mybb->settings['prism_highlight_setting_1'] == "1") { 
 
-  // Globals
-  global $headerinclude;
+     // Globals
+     global $headerinclude;
 
      // Headerinclude
      $headerinclude .= "
@@ -362,7 +362,7 @@ function prism_highlight() {
 <style>
   .codeblock code {
 	 display: unset;
-   }   
+   } 
 </style>";
 
      // Add Codeblock Style CSS File Links
