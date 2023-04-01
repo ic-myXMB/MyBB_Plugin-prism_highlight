@@ -8,7 +8,7 @@
  *
  * MyBB Version: 1.8
  *
- * Plugin Version: 1.0.3
+ * Plugin Version: 1.0.4
  *
  * Lang: Deutsch SIE
  * 
@@ -20,7 +20,7 @@ $l['prism_highlight_description'] = 'Code-und PHP-Codeblocke zur Syntaxhervorheb
 $l['prism_highlight_website'] = 'https://github.com/ic-myXMB/MyBB_Plugin-prism_highlight';
 $l['prism_highlight_author'] = 'ic_myXMB';
 $l['prism_highlight_author_site'] = 'https://github.com/ic-myXMB/MyBB_Plugin-prism_highlight';
-$l['prism_highlight_version'] = '1.0.3';
+$l['prism_highlight_version'] = '1.0.4';
 $l['prism_highlight_guid'] = '';
 $l['prism_highlight_compatability'] = '18*';
 $l['prism_highlight_code_name'] = 'prismhighcode';

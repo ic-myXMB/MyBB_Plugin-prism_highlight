@@ -8,7 +8,7 @@
  *
  * MyBB Version: 1.8
  *
- * Plugin Version: 1.0.3
+ * Plugin Version: 1.0.4
  * 
  */
 
@@ -200,7 +200,16 @@ function prism_highlight() {
    }
    pre[class*=\"language-\"].line-numbers {
      padding-left: 3.8em;
-   }   
+   }
+   .collapsed:after, .expanded:after {
+     border: 1px solid #F5F2F0;
+     background: #F5F2F0;
+     color: #333;
+   }
+   .collapsed:hover:after, .expanded:hover:after {
+     background: #F5F2F0;
+     color: #555;
+   }    
 </style>";
 
   }
@@ -222,7 +231,16 @@ function prism_highlight() {
    pre[class*=\"language-\"] {
      border: unset;
      box-shadow: unset;
-   }       
+   }
+   .collapsed:after, .expanded:after {
+     border: 1px solid #4c3f33;
+     background: #4c3f33;
+     color: #A0A0A0;
+   }
+   .collapsed:hover:after, .expanded:hover:after {
+     background: #4c3f33;
+     color: #fff;
+   }
 </style>";
 
   }
@@ -247,7 +265,16 @@ function prism_highlight() {
      background-size: auto;
      background-size: 1em 1em;
      opacity: 0.9;
-   }     
+   }
+   .collapsed:after, .expanded:after {
+     border: 0px;
+     background: transparent;
+     color: #E92990;
+   }
+   .collapsed:hover:after, .expanded:hover:after {
+     background: transparent;  
+     color: #13C2EF;
+   }        
 </style>";
 
   }  
@@ -266,6 +293,15 @@ function prism_highlight() {
    pre[class*=\"language-\"].line-numbers {
      padding-left: 3.8em;
    }
+   .collapsed:after, .expanded:after {
+     border: 1px solid #272822;
+     background: #272822;
+     color: #f8f8f2;
+   }
+   .collapsed:hover:after, .expanded:hover:after {
+     background: #272822;
+     color: #fff;
+   }   
 </style>";
 
   }  
@@ -286,7 +322,16 @@ function prism_highlight() {
    } 
    pre[class*=\"language-\"] {
      border: unset;
-   }     
+   } 
+   .collapsed:after, .expanded:after {
+     border: 1px solid #141414;
+     background: #141414;
+     color: #A0A0A0;
+   }
+   .collapsed:hover:after, .expanded:hover:after {
+     background: #141414;
+     color: #ffffff;
+   }       
 </style>";
 
   }
@@ -299,11 +344,21 @@ function prism_highlight() {
 <link href=\"inc/plugins/prism_highlight/themes/coy.min.css\" rel=\"stylesheet\" />
 <style>
   .codeblock {
-	 background: #ffffff;
+	 background: #fff;
    }
    pre[class*=\"language-\"].line-numbers {
      padding-left: 3.8em;
    }
+   .collapsed:after, .expanded:after {
+     border: 1px solid #fff;
+     background: #fff;
+     z-index: 999;
+     color: #333;
+   }
+   .collapsed:hover:after, .expanded:hover:after {
+     background: #fff;
+     color: #000;
+   }   
 </style>";
 
   }
@@ -320,7 +375,16 @@ function prism_highlight() {
    }
    pre[class*=\"language-\"].line-numbers {
      padding-left: 3.8em;
-   }     
+   }  
+   .collapsed:after, .expanded:after {
+     border: 1px solid #fdf6e3;
+     background: #fdf6e3;
+     color: #333;
+   }
+   .collapsed:hover:after, .expanded:hover:after {
+     background: #fdf6e3;
+     color: #000;
+   }      
 </style>";
 
   } 
@@ -338,7 +402,16 @@ function prism_highlight() {
    }
    pre[class*=\"language-\"].line-numbers {
      padding-left: 3.8em;
-   }   
+   } 
+   .collapsed:after, .expanded:after {
+     border: 1px solid #2d2d2d;
+     background: #2d2d2d;
+     color: #ccc;
+   }
+   .collapsed:hover:after, .expanded:hover:after {
+     background: #2d2d2d;
+     color: #fff;
+   }     
 </style>";
 
   }   
@@ -359,11 +432,143 @@ function prism_highlight() {
 <script src=\"inc/plugins/prism_highlight/jscripts/prism.js\"></script>
 <!-- Highlight JS And Prism JS Init -->  
 <script src=\"inc/plugins/prism_highlight/jscripts/prism_highlight_init.js\"></script>
-<style>
-  .codeblock code {
-	 display: unset;
-   } 
-</style>";
+<!-- Codeblock Expand/Collapse (CSS lang) -->
+<style> 
+.codeblock code {
+	display: unset;
+} 
+.no_bottom_border {
+    border-bottom: 0;
+}
+.collapsed, .expanded {
+    overflow: hidden;
+    border: 1px solid #D3D3D3;
+    background: #FAFAFA;
+    text-align: justify;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0;
+    position: relative;
+}
+.collapsed {
+    max-height: 212px;
+    opacity: 0.7;
+}
+.expanded {
+    height: 100%;
+    opacity: 1;
+    padding-bottom: 35px;
+}
+.collapsed:after, .expanded:after {
+    position: absolute;
+    height: 25px;
+    bottom: 0px;
+    left: 1px;
+    right: 1px;
+    cursor: pointer;
+    border: 1px solid #A5A5A5;
+    background: #D3D3D3;
+    color: #4A4A4A;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    font-family: Tahoma, Verdana, Arial, Sans-Serif;
+    font-size: 13px;
+    border-radius: 0px 0px 5px 5px;
+}
+.collapsed:after {
+    opacity: 0.9;
+}
+.expanded:after {
+    opacity: 0.7;
+}
+.collapsed:hover:after, .expanded:hover:after {
+    opacity: 1;
+    background: #838383;
+    color: #1A1A1A;
+}
+/** Lang() Translations **/
+
+/* english */
+
+.collapsed:lang(en):after{
+   content: 'Show More';
+}
+
+.expanded:lang(en):after{
+   content: 'Show Less';
+}
+
+/* english-us */
+
+.collapsed:lang(en-us):after{
+   content: 'Show More';
+}
+
+.expanded:lang(en-us):after{
+   content: 'Show Less';
+}
+
+/* english-gb */
+
+.collapsed:lang(en-gb):after{
+   content: 'Show More';
+}
+
+.expanded:lang(en-gb):after{
+   content: 'Show Less';
+}
+
+/* espanol */
+
+.collapsed:lang(es):after{
+   content: 'Mostrar más';
+}
+
+.expanded:lang(es):after{
+   content: 'Muestra menos';
+}
+
+/* french */
+
+.collapsed:lang(fr):after{
+   content: 'Montre plus';
+}
+
+.expanded:lang(fr):after{
+   content: 'Montrer moins';
+}
+
+/* italiano */
+
+.collapsed:lang(it):after{
+   content: 'Mostra di più';
+}
+
+.expanded:lang(it):after{
+   content: 'Mostra meno';
+}
+
+/* german */
+
+.collapsed:lang(de):after{
+   content: 'Zeige mehr';
+}
+
+.expanded:lang(de):after{
+   content: 'Weniger anzeigen';
+}
+</style>
+<!-- Codeblock Expand/Collapse -->
+<script type=\"text/javascript\">
+$(document).ready(function () {
+    $('div.codeblock').addClass('collapsed');
+        $('div.codeblock').click(function(){
+        $(this).toggleClass('expanded collapsed');
+        e.preventDefault();
+    });
+});
+</script>";
 
      // Add Codeblock Style CSS File Links
      $prism_highlight = "".$codeblock_style."";

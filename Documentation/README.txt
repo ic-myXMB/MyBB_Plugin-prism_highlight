@@ -5,7 +5,7 @@
  *
  * MyBB Version: 1.8.x (was created at time using 1.8.31)
  *
- * Current Plugin Version: 1.0.3
+ * Current Plugin Version: 1.0.4
  *
  * Langs: English, EnglishGB, Espanol, French, Italiano, German
  *
@@ -24,6 +24,10 @@ INSTALL INSTRUCTIONS:
  4) Have Fun!
 
 CHANGELOG:
+
+- Version 1.0.4
+
+   - added collapse / expand functionality and styling to the codeblock since prism was displaying codeblock full. (To accomplish such opted to to use one of the variants of such styling with css lang translations shared in a past tutorial by vintagedaddyo)
 
 - Version 1.0.3
 
