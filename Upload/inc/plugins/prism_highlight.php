@@ -563,9 +563,9 @@ function prism_highlight() {
 <script type=\"text/javascript\">
 $(document).ready(function () {
     $('div.codeblock').addClass('collapsed');
-        $('div.codeblock').click(function(){
+        $('div.codeblock').click(function(event){
         $(this).toggleClass('expanded collapsed');
-        e.preventDefault();
+        event.preventDefault();
     });
 });
 </script>";
